@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Details Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .button-group {
+            
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 10px;
+        }
+
+        .button-group button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .button-group button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        /* .noneButton input{
+            text-align:center;
+            margin-left: 30%;
+        }
+         */
+    </style>
+</head>
+<body>
+    <h1><%= specificHabit.habit %></h1>
+    <h3><%= new Date().toJSON().slice(0, 10); %></h3>
+    <table>
+        <% const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]; %>
+        <% const currentDay = new Date().getDay(); %>
+        <tr>
+            <% for (let i = currentDay - 6; i <= currentDay; i++) { %>
+                <th><%= weekDays[i >= 0 ? i : weekDays.length + i] %></th>
+            <% } %>
+        </tr>
+        <tr>
+            <!-- <td colspan="7"> -->
+                <form action="/api/userHabits/changeStatus/<%= specificHabit._id %>" method="post">
+                    <% for (let i = currentDay - 6; i <= currentDay; i++) { %>
+                        <td>
+                        <div class="button-group">
+                            <div>
+                            <button type="submit" value="Done/<%=i%>" name="Button">Done</button>
+                            
+                            <button type="submit" value="Not_Done/<%=i%>" name="Button">Not Done</button>
+                        
+                            
+                        </div>
+                            
+                            <button type="submit" value="None/<%=i%>" name="Button">None</button>
+                        
+                        </div>
+                    </td>
+                    <% } %>
+                </form>
+            <!-- </td> -->
+        </tr>
+    </table>
+    
+       
+   
+    
+
+    
+    <script> 
+    const allInputs = document.querySelectorAll('button[type="submit"]');
+    console.log(allInputs[0].value);
+   
+    
+    
+
+
+
+
+         
+    
+
+
+
+        
+     
+    
+
+</script>
+    
+    
+</body>
+</html>

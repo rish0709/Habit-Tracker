@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <style>
+            body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            margin-left: 37%;
+        }
+
+        .card-body {
+            /* position: absolute;
+            top: 50%;
+            left: 50%; */
+            /* transform: translate(-50%, -50%); */
+            
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            margin: 0;
+        }
+
+        #status {
+            margin-left: 10px;
+        }
+
+        </style>
+        
+    </head>
+
+    <body>
+
+<h1>your Habits</h1>
+<%habitArray.forEach((eachHabit) => {%>
+<div class="card" style="width: 18rem;">
+    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+    <div class="card-body">
+      <h3 class="card-title"><%=eachHabit.habit%></h3>
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <button id = "status" onclick="location.href = '/api/userHabits/status/<%=eachHabit._id%>';" class="btn btn-primary">Status</button>
+     
+    </div>
+  </div>
+
+<%})%>
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

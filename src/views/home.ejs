@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>
+            Habit Tracker
+
+        </title>
+        <style>
+               body {
+                background-color: #f2f2f2; /* Set a suitable background color */
+            }
+
+            #outer-div {
+                max-width: 400px;
+                margin: 0 auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: #fff; /* Adjust as needed */
+            }
+
+/* Style the form */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style form groups */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Style form controls */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style the submit button */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+        </style>
+        
+    </head>
+    <body>
+        <div id = "outer-div">
+        <form
+        action="/api/userHabits/allHabits"
+        method="post"
+      >
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="habit"
+            placeholder="enter new habit to add"
+            
+          />
+        </div>
+        
+        
+        
+        <div class = "form-group">
+        <button type="submit" class="btn btn-primary">add new habit</button>
+    </div>
+</div>
+    
+      </form>
+
+    </body>
+</html>
