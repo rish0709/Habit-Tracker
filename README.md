@@ -60,7 +60,7 @@ The Habit Tracker is an application developed using the MVC architecture with No
 
 ## Author
 
-- **Akash Verma**
+- **Rishabh Goyal*
 ### Contact ME
 - [LinkedIn](https://www.linkedin.com/in/rishabh-goyal-8086671b0/)
 - [Email Address](mailto:rishabhagrawal005@gmail.com)
